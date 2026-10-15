@@ -22,5 +22,31 @@ Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de 
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
+// Première version avec ||
+// Problème : 0 est considéré comme une valeur falsy.
 
+const afficherScoreBug = (score) => {
+  return `Score : ${score || "aucun"}`;
+};
+
+console.log(afficherScoreBug(15));
+console.log(afficherScoreBug(0));
+console.log(afficherScoreBug(undefined));
+
+// Version corrigée avec ??
+// Cet opérateur conserve 0.
+
+const afficherScore = (score) => {
+  return `Score : ${score ?? "aucun"}`;
+};
+
+console.log(afficherScore(15));
+console.log(afficherScore(0));
+console.log(afficherScore(undefined));
+
+// Bonus : opérateur &&
+
+const estConnecte = true;
+
+estConnecte && console.log("Bienvenue !");
 
