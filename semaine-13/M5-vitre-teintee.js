@@ -35,19 +35,31 @@ Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fo
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
-// Mes prédictions (avant d'exécuter) :
-//
+// Prédictions avant correction :
+// Kinshasa s'affiche.
+// Ensuite, ReferenceError apparaît pour commune.
+// La fonction afficher ne sera donc jamais exécutée.
 
-const ville = 'Kinshasa';
+// Version corrigée :
+
+const ville = "Kinshasa";
+
 if (true) {
-  const commune = 'Gombe';
+  const commune = "Gombe";
+
   console.log(ville);
+  console.log(commune);
 }
-console.log(commune);
+
+// commune est accessible uniquement dans son bloc.
 
 const afficher = () => {
-  const secret = 'pondu';
+  const secret = "pondu";
+
   return secret;
 };
+
 console.log(afficher());
-console.log(secret);
+
+// secret est accessible uniquement dans la fonction.
+// console.log(secret) provoquerait une ReferenceError.
