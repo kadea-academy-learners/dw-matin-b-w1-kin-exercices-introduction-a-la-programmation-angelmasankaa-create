@@ -31,15 +31,31 @@ Le troisième bug vient de l'« insertion automatique de point-virgule » (ASI).
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
-const doubler = (n) => { n * 2; };
-console.log(doubler(4));           // undefined ?!
+// Bug 1 : il manquait return.
+// Sans return, la fonction renvoyait undefined.
 
-const calculerTva = (prix) => { console.log(prix * 0.16); };
+const doubler = (n) => {
+  return n * 2;
+};
+
+console.log(doubler(4));
+
+// Bug 2 : console.log affiche une valeur,
+// mais ne la renvoie pas.
+
+const calculerTva = (prix) => {
+  return prix * 0.16;
+};
+
 const total = calculerTva(1000) + 500;
-console.log(total);                // NaN ?!
+
+console.log(total);
+
+// Bug 3 : un saut de ligne après return
+// peut provoquer une insertion automatique de point-virgule.
 
 const saluer = (prenom) => {
-  return
-    `Mbote ${prenom}`;
+  return `Mbote ${prenom}`;
 };
-console.log(saluer('Ney'));        // undefined ?!
+
+console.log(saluer("Ney"));
