@@ -19,5 +19,28 @@ Recherche (à rédiger dans RECHERCHES.md) :
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
+// Compte à rebours de 10 à 1.
+for (let nombre = 10; nombre >= 1; nombre--) {
+  console.log(nombre);
+}
 
+console.log("Décollage !");
+
+// Afficher uniquement les nombres pairs.
+for (let nombre = 10; nombre >= 1; nombre--) {
+  if (nombre % 2 === 0) {
+    console.log(nombre);
+  }
+}
+
+// Ignorer le nombre 5.
+for (let nombre = 10; nombre >= 1; nombre--) {
+  if (nombre === 5) {
+    continue;
+  }
+
+  console.log(nombre);
+}
+
+console.log("Décollage !");
 
