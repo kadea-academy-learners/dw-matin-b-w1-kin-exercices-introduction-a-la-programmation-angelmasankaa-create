@@ -20,4 +20,21 @@ Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeu
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+for (let nombre = 1; nombre <= 30; nombre++) {
 
+  // On vérifie d'abord si le nombre est multiple de 3 et de 5.
+  // Sinon, le nombre 15 serait traité comme un simple multiple de 3.
+
+  if (nombre % 3 === 0 && nombre % 5 === 0) {
+    console.log("MalewaWewa");
+
+  } else if (nombre % 3 === 0) {
+    console.log("Malewa");
+
+  } else if (nombre % 5 === 0) {
+    console.log("Wewa");
+
+  } else {
+    console.log(nombre);
+  }
+}
